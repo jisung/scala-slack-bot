@@ -1,3 +1,5 @@
+import com.typesafe.sbt.SbtNativePackager._
+
 name := "slack-scala-bot-bundle"
 
 version := "0.1.1"
@@ -34,3 +36,5 @@ libraryDependencies ++= {
 }
 
 resolvers ++= Seq("spray repo" at "http://repo.spray.io", "scalac repo" at "https://raw.githubusercontent.com/ScalaConsultants/mvn-repo/master/")
+
+packageArchetype.java_server
