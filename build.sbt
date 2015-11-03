@@ -38,3 +38,5 @@ libraryDependencies ++= {
 resolvers ++= Seq("spray repo" at "http://repo.spray.io", "scalac repo" at "https://raw.githubusercontent.com/ScalaConsultants/mvn-repo/master/")
 
 packageArchetype.java_server
+
+herokuAppName in Compile := "murmuring-atoll-6935"
