@@ -2,6 +2,7 @@ package io.scalac.slack.common
 
 import akka.actor.{ActorContext, ActorRef, Props}
 import io.scalac.slack.bots.gifs.{GifsBot, GifsRepository}
+import io.scalac.slack.bots.prassign.PrAssignBot
 import io.scalac.slack.bots.recruitment.{EmployeeRepository, RecruitmentBot}
 import io.scalac.slack.bots.voting.{InMemoryVotingRepo, VotingBot}
 import io.scalac.slack.bots.{DirectMessageTestBot, RichMessageTestBot, ImportantMessageBot, LoggingBot}
@@ -42,6 +43,7 @@ class DefaultBotBundle extends BotModules {
     val feedbackBot = context.actorOf(Props(classOf[FeedbackBot], new FeedbackRepository(), bus), "feedbackBot")
     val helpBot = context.actorOf(Props(classOf[HelpBot], bus), "helpBot")
     val importantMessageBot = context.actorOf(Props(classOf[ImportantMessageBot], bus), "importantMessageBot")
+    val prAssignBot = context.actorOf(Props(classOf[PrAssignBot], bus), "prAssignBot")
 //    val richMessageBot = context.actorOf(Props[RichMessageTestBot], "richMessageBot")
 //    val gifBot = context.actorOf(Props(classOf[GifsBot], new GifsRepository(), bus), "gifBot")
 //    val recruitmentBot = context.actorOf(Props(classOf[RecruitmentBot], new EmployeeRepository(), bus), "recruitmentBot")
